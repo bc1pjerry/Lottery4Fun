@@ -1,29 +1,36 @@
 # Lottery4Fun
-This repo is for fun to violent impact one random number
+This repository contains small Swift lottery simulations made for fun.
 
 ## Requirement
-* swift
+* Swift
 
 ## Lottery Game Play
-### Chinese Welfare Lottery
+### Chinese Sports Lottery
 #### 7 Star
-Random pick 7 numbers each from 0 ~ 9, if selected number match the random number according to order then you can get 5 million RMB as reward.  
-* The top reward probability of this game is 1/10,000,000.
-#### Double Chromosp
-Random pick 6 red numbers from 1 ~ 33, and pick 1 blue number from 1 ~ 16. Combine red numbers and blue number as 1 winning number combination. If selected combination match the winning number then you can get more 5 million RMB as reward.
-* The top reward probablility of this game about 1/17,721,088
+Pick 7 digits, each from 0 through 9. All 7 digits must match the winning
+number in the same order to win the top prize.
+
+* The top-prize probability is 1 in 10,000,000.
+
+### Chinese Welfare Lottery
+#### Double Color Ball
+Pick 6 different red numbers from 1 through 33 and 1 blue number from 1
+through 16.
+
+* The top-prize probability is 1 in 17,721,088.
 
 ## Usage
-* Chinese Welfare Lottery 7 Star
+* Chinese Sports Lottery 7 Star
 ```bash
 swift 7Star.swift
 ```
-* Chinese Welfare Lottery Double Chromosp
+* Chinese Welfare Lottery Double Color Ball
 ```bash
 swift DoubleChromosphere.swift
 ```
-## Results
-* Chinese Welfare Lottery 7 Star
-```
-About 3 million to 4 million times to get right number
-```
+
+`7Star.swift` keeps generating seven-digit selections until one matches its
+random winning number. It takes 10,000,000 attempts on average.
+
+`DoubleChromosphere.swift` prints 100 valid random selections. Each selection
+contains 6 unique, sorted red numbers and 1 blue number.

@@ -1,28 +1,17 @@
-//
-//  LotterCollisionDetection.swift
-//
-//
-//  Created by Jerry on 11/15/19.
-//
-
 import Foundation
 
-let targetNum = arc4random_uniform(99)
+let digitRange = 0...9
+let targetNumbers = (0..<7).map { _ in Int.random(in: digitRange) }
 
-var counter = 0
+var attempts = 0
 
-func impactTarget () -> Bool {
-    var myNum = arc4random_uniform(99)
-    if myNum == targetNum {
-        print("Using \(counter) times to find the random number \(targetNum)!")
-        return true
-    } else {
-        print("Number \(myNum) is not the target number: \(targetNum), Round: \(counter)")
-        myNum = arc4random_uniform(99)
-        return false
+while true {
+    attempts += 1
+    let selectedNumbers = (0..<7).map { _ in Int.random(in: digitRange) }
+
+    if selectedNumbers == targetNumbers {
+        let winningNumber = targetNumbers.map(String.init).joined()
+        print("Matched \(winningNumber) after \(attempts) attempts.")
+        break
     }
-}
-
-while impactTarget() == false {
-    counter += 1
 }
